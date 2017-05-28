@@ -14,7 +14,6 @@ COPY . /usr/src/app
 
 # Environment variables
 ENV SECRET secret
-ENV MONGODB mongodb://:27017/news
 
 # Accessible from 3000 (default port on Express.js)
 EXPOSE 3000
