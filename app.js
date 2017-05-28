@@ -11,7 +11,7 @@ require('./models/Posts');
 require('./models/Comments');
 require('./models/Users')
 
-mongoose.connect('mongodb://localhost/news');
+mongoose.connect(process.env.MONGODB);
 
 // routes dependencies
 var index = require('./routes/index');
