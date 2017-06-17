@@ -2,9 +2,9 @@ version: '3'
 
 services:
   service:
-    build: ./app
+    build: ./service
     volumes:
-      - ./app:/usr/src/app
+      - ./service:/usr/src/
     ports:
       - 3000:3000
     depends_on:
