@@ -27,3 +27,10 @@ Things I'm following while progressing
 https://alexanderzeitler.com/articles/docker-machine-and-docker-compose-developer-workflows/
 
 https://www.youtube.com/watch?v=Qw9zlE3t8Ko - docker compose v3
+
+
+Stop and remove all local docker images
+=======================================
+
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)

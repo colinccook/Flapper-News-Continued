@@ -4,13 +4,14 @@ services:
   service:
     build: ./service
     volumes:
-      - ./service:/usr/src/
+      - ./service:/usr/src/app
+      - /usr/src/app/node_modules
     ports:
       - 3000:3000
     depends_on:
-      - mongo-database
-  mongo-database:
-    image: mongodb
+      - database
+  database:
+    image: mongo
     ports:
       - 27017:27017
     
