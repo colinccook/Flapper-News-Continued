@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  service:
+    build: ./app
+    volumes:
+      - ./app:/usr/src/app
+    ports:
+      - 3000:3000
+    depends_on:
+      - mongo-database
+  mongo-database:
+    image: mongodb
+    ports:
+      - 27017:27017
+    
