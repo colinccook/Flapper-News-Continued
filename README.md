@@ -19,3 +19,11 @@ docker run -p 3000:3000 --name flapper --link mongo:mongo -d colinccook/flapper-
 
 
 (the above command spits out an ID which you can use docker logs {id} to view output)
+
+
+
+
+Things I'm following while progressing
+https://alexanderzeitler.com/articles/docker-machine-and-docker-compose-developer-workflows/
+
+https://www.youtube.com/watch?v=Qw9zlE3t8Ko - docker compose v3
