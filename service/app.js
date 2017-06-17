@@ -11,7 +11,7 @@ require('./models/Posts');
 require('./models/Comments');
 require('./models/Users')
 
-mongoose.connect('mongodb://'+process.env.MONGO_PORT_27017_TCP_ADDR+':'+process.env.MONGO_PORT_27017_TCP_PORT+'/news');
+mongoose.connect('mongodb://database'+'/news');
 
 // routes dependencies
 var index = require('./routes/index');
