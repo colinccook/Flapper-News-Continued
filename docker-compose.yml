@@ -1,6 +1,10 @@
 version: '3'
 
 services:
+  database:
+    image: mongo:3.4.4
+    ports:
+      - 27017:27017
   service:
     build: ./service
     volumes:
@@ -10,15 +14,11 @@ services:
       - 3000:3000
     depends_on:
       - database
-  database:
-    image: mongo:3.4.4
-    ports:
-      - 27017:27017
   web:
     build: ./web
-    volumes:
-      - ./web:/usr/share/nginx/html
     ports:
-      - 8080:80
+      - 8090:80
+    # volumes:
+    #   - ./web:/usr/share/nginx/html
     depends_on:
       - service
