@@ -14,4 +14,10 @@ services:
     image: mongo:3.4.4
     ports:
       - 27017:27017
+  web:
+    build: ./web
+    volumes:
+     - ./web:/usr/share/nginx/html
+     ports:
+      - 8080:80
     
