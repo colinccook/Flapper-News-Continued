@@ -20,9 +20,9 @@ And use <kbd>CTRL</kbd> + <kbd>Z</kbd> to stop, as you would any long running te
 
 # The srbu script
 
-The srbu script is shorthand for stopping all local containers, removing them, rebuilding the project containers then running them. You MAY NOT want to remove all local Docker Contains.
+The srbu script is shorthand for stopping all local containers, removing them, rebuilding the project containers then running them. This script is overkill; you MAY NOT want to remove all local Docker Containers!
 
-If you simply want to rebuild and run the app, use the following commands:
+If you simply want to rebuild and run the app and leave your existing Docker containers alone, use the following commands in the project directory:
 
 ```bash
 docker-compose build
