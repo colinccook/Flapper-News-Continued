@@ -12,9 +12,6 @@ RUN npm install
 # Bundle app source
 COPY . /usr/src/app
 
-# Environment variables
-ENV SECRET secret
-
 # Accessible from 3000 (default port on Express.js)
 EXPOSE 3000
 

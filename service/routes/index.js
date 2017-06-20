@@ -2,8 +2,10 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 
+var dockerSecrets = require('../shared/dockerSecrets.js');
+
 var jwt = require('express-jwt');
-var auth = jwt({secret: process.env.SECRET, userProperty: 'payload'});
+var auth = jwt({secret: dockerSecrets.getSecret('hashkey'), userProperty: 'payload'});
 
 var mongoose = require('mongoose');
 var Post = mongoose.model('Post');

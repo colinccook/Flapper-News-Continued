@@ -2,6 +2,8 @@ var mongoose = require('mongoose');
 var crypto = require('crypto');
 var jwt = require('jsonwebtoken');
 
+var dockerSecrets = require('../shared/dockerSecrets.js');
+
 var UserSchema = new mongoose.Schema({
     username: {type: String, lowercase: true, unique: true},
     hash: String,
@@ -28,7 +30,7 @@ UserSchema.methods.generateJWT = function () {
         _id: this._id,
         username: this.username,
         exp: parseInt(exp.getTime() / 1000),
-    }, process.env.SECRET);
+    }, dockerSecrets.getSecret('hashkey'));
 };
 
 mongoose.model('User', UserSchema);
