@@ -9,7 +9,7 @@ Specifically I wanted to:
 
 # How to run locally
 
-The only pre-prequisite is to install Docker on your favourite OS. I've been developing on macOS so Windows may be hit or miss.
+The only pre-requisite is to install Docker on your favourite OS. I've been developing on macOS so Windows may be hit or miss.
 
 * Clone the repository to your local machine, go to it
 * Ensure Docker is installed and running
