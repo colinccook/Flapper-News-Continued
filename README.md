@@ -1,36 +1,30 @@
-# Flapper-News-Continued
-Continuing work from the original Flapper News tutorial from Thinkster.io
+# Flapper News Continued
+This project is a continuation of the excellent MEAN tutorial provided by Thinkster.io. 
 
+Specifically I wanted to:
+* Separate the UI and the service layer
+* Dockerize the app
+* Finish the suggested improvements to further my understanding of AngularJS and ExpressJS
+* Get Continuous Integration running across Github, Docker Cloud and an Azure VM
 
+# How to run locally
 
+The only pre-prequisite is to install Docker on your favourite OS. I've been developing on macOS so Windows may be hit or miss.
 
-# Create a mongodb database called 'mongo'
+* Clone the repository to your local machine, go to it
+* Ensure Docker is installed and running
+* Run "./srbu" in a terminal (read below first)
+* Once built, navigate to http://localhost:8090
 
-docker run -p 27017:27017 -d --name mongo mongo
+And use <kbd>CTRL</kbd> + <kbd>Z</kbd> to stop, as you would any long running terminal process.
 
+# The srbu script
 
-# Build and run flapper-news-continued image, linked to 'mongo'
+The srbu script is shorthand for stopping all local containers, removing them, rebuilding the project containers then running them. You MAY NOT want to remove all local Docker Contains.
 
-docker build -t colinccook/flapper-news-continued .
+If you simply want to rebuild and run the app, use the following commands:
 
-docker run -p 3000:3000 --name flapper --link mongo:mongo -d colinccook/flapper-news-continued
-
-
-
-
-(the above command spits out an ID which you can use docker logs {id} to view output)
-
-
-
-
-Things I'm following while progressing
-https://alexanderzeitler.com/articles/docker-machine-and-docker-compose-developer-workflows/
-
-https://www.youtube.com/watch?v=Qw9zlE3t8Ko - docker compose v3
-
-
-Stop and remove all local docker images
-=======================================
-
-docker stop $(docker ps -a -q)
-docker rm $(docker ps -a -q)
+```bash
+docker-compose build
+docker-compose up
+```
