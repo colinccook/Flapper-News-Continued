@@ -1,0 +1,11 @@
+docker-machine create -d azure \
+    --azure-subscription-id bd1c6498-f290-43ea-9ced-79833ce84845 \
+    --azure-ssh-user azureuser \
+    --azure-open-port 80 \
+    --azure-location westeurope \
+    docker-azure
+
+
+open port 2375 in firewall - allows docker cloud to communicate with docker daemon running in the nde
+
+open port 6783/tcp 6783/udp for overlay network (whatever that means)
