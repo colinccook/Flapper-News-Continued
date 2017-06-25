@@ -1,5 +1,5 @@
 # Source container
-FROM node
+FROM node:8.1.2-alpine
 
 # Create app directory
 RUN mkdir -p /usr/src/app
